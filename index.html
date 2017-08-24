@@ -16,67 +16,112 @@
 
 
 <body>
-    <h1>TRIVIA GAME!!</h1>
-</br>
-</br></br> </br>
-<div id="wrapper"class ="container col-md-6 col-md-offset-3">
-    <div class ="container col-md-12 " id= "play">
-    <p>How to Play:
-    </br></br>
-    STEP 1: Answer 10 randomly selected trivia questions regarding time travel in popular culture.
-    </br></br>
-    STEP 2: Do well and brag about it or do horribly and hide in shame.</p>
-</br>
-</br>
-  <button id="start_button">START GAME</button>
-    </div>
-  <div id="timer"></div>
+  <h1>TRIVIA GAME!!</h1>
   </br>
-  
-  <div id="question"></div>
-</br>
-  <ul id="answers" "list-style: none"></ul>
-  <!-- <div class="nextButton">Next Question</div> -->
-  <div id="quizMessage"></div>
-  <div id="correct"></div>
-  <div id="wrong"></div>
-  <div id="missed"></div>
+  </br>
+    <div id="wrapper" class="container col-md-6 col-md-offset-3">
+     <!-- <div class="jumbotron col-md-12 "></div> -->
+     <div class="container col-md-12" id="play">
+      <p>How to Play:
+        </br>
+        </br>
+        STEP 1: Answer 10 randomly selected trivia questions regarding time travel in popular culture.
+        </br>
+        </br>
+        STEP 2: Do well and brag about it or do horribly and hide in shame.</p>
+      </br>
+      </br>
+      <button id="start_button">START GAME</button>
+    </div>
+    <div id="timer"></div>
+    </br>
+
+    <div id="question"></div>
+    </br>
+    <ul id="answers" "list-style: none"></ul>
+    <!-- <div class="nextButton">Next Question</div> -->
+    <div id="quizMessage"></div>
+    <div id="correct"></div>
+    <div id="wrong"></div>
+    <div id="missed"></div>
   </div>
   <style>
-      body{
-      background:url("https://hpmedia.bloomsbury.com/rep/g/page-background-shell%20-%202.png");
-      }
-      h1{
-          font: 60px;
-          color:antiquewhite;
-          font-style: sans-serif;
-          font-weight: bold;
-          text-align: center;
-      }
-      p {
-        font-size: 20px;
-        color:antiquewhite;
-        font-style: sans-serif;
-        }
-        #timer,#question,#answers,#quizMessage,#correct,#wrong,#missed {
-        font-size: 18px;
-        color:antiquewhite;
-        font-style: sans-serif;
-        }
-      #wrapper{
-        border-top:1px dotted black;
-        border-bottom:1px dotted black; 
-        padding: 20px;
-      }
+    body {
+      background: url("https://hpmedia.bloomsbury.com/rep/g/page-background-shell%20-%202.png");
+    }
 
-      #start_button{
-       margin-left:220px;
-      color:brown;
-      }
-      ul {
-         list-style-type: none;
-        }
-</style>
+    h1 {
+      font: 60px;
+      color: antiquewhite;
+      font-style: sans-serif;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    p {
+      font-size: 20px;
+      color: antiquewhite;
+      font-style: sans-serif;
+    }
+
+    #timer,
+    #question,
+    #answers,
+    #quizMessage,
+    #correct,
+    #wrong,
+    #missed {
+      font-size: 18px;
+      color: antiquewhite;
+      font-style: sans-serif;
+    }
+
+    #wrapper {
+      border-top: 2px dashed black;
+      border-bottom: 2px dashed black;
+      padding: 20px;
+      margin-bottom: 100px;
+    }
+
+    #start_button {
+      margin-left: 220px;
+      color: brown;
+    }
+    span{
+      font-size:40px;
+      color: violet;
+      font-weight: bold;
+      text-align: center;
+      margin-left: 50px;
+
+    }
+    ul {
+      list-style-type: none;
+    }
+    .img{
+      width: 200px;
+      height: 150px;
+      margin-left:100px;
+      opacity:0.6;
+      border:1px solid black;
+    }
+    #fact{
+      font-size:25px;
+      color:blanchedalmond;
+      text-align: auto;
+    }
+    .jumbotron{
+      background-image:url("http://dastornews.com/wp-content/uploads/2015/09/chalkboard-trivia-overlay-620x256.png");
+      margin-bottom: 0px;
+      background-position: 0% 25%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height:230px;
+    width:100%;
+
+      
+    }
+  </style>
   <script>
     // creating variables
     var correct = 0;
@@ -84,8 +129,10 @@
     var missed = 0;
     var questioncounter = 0; //to track question number
     var selections = []; //Array containing user choices
+    // console.log(selections);
     var time = 30;
-    var timers = [];
+    var ranQuestion="";
+    // var questionAmount =5;
     // arrayofanobject
     var questions = [{
         question: "What is the longest river in the United States?",
@@ -150,6 +197,44 @@
         answers: ["A pair of shoes", "A dress", "A necklace", "China"],
         correctAnswer: 0,
         fact: "Paolo sent a pair of shoes to Rachel from Italy."
+      },{
+        question: "What was Rachel wearing when she entered the coffeehouse in the pilot episode?",
+        answers: ["Business suit", "Ski jacket", "Wedding dress", "Bathing suit"],
+        correctAnswer: 2,
+        fact: "Rachel was wearing 'Wedding dress' when she entered the coffeehouse in the pilot episode"
+      },{
+        question: "What is the name of the coffeehouse?",
+        answers: ["Coffee Studio", "Starbucks", "Mocha Cafe", "Central Perk"],
+        correctAnswer: 3,
+        fact: "name of the coffeehouse is 'Central Perk'"
+      },{
+        question: "Who is the holiday armadillo?",
+        answers: ["Monica", "Ross", "Joey", "Chandler"],
+        correctAnswer:1 ,
+        fact: "'Ross'is the holiday armadillo?"
+      },{
+        question: "What season did Ross and Rachel break-up?",
+        answers: ["5", "6", "9", "3"],
+        correctAnswer:3 ,
+        fact: "Ross and Rachel broke-up in season '3'"
+      },
+      {
+        question: "Ross has 2 kids. What are their names?",
+        answers: ["Dina and Megan", "Greg and Miley", "Emma and Ben", "Julia and Isabella"],
+        correctAnswer:2 ,
+        fact: "Ross has 2 kids named 'Emma and Ben'"
+      },
+      {
+        question: "Rachel has 2 sisters. Which actress portrayed Jill?",
+        answers: ["Jennifer Aninston", "Christiana Applegate", "Anna Faris", "Reese Witherspoon"],
+        correctAnswer: 3,
+        fact: "'Reese Witherspoon' portrayed Jill"
+      },
+      {
+        question: "In The One with the Football what were they competing for?",
+        answers: ["Geller Trophy", "Green Cup", "Geller Cup", "Bing Cup"],
+        correctAnswer: 2,
+        fact: "In The One with the Football what were they competing for 'Geller Cup' "
       },
     ];
     $(document).ready(function () {
@@ -157,42 +242,51 @@
         $(this).hide();
         $("#play").hide();
         clear();
-        correct=0;
-        wrong=0;
-        missed=0;
-        questioncounter=0;
-                 game();
+        correct = 0;
+        wrong = 0;
+        missed = 0;
+        questioncounter = 0;
+        game();
       });
+
       function timer() {
         time--;
         $("#timer").html("Time remaining: " + "00:" + time + " secs");
         if (time === 0) {
           missed++;
+          $("#question").hide();
+              $("#answers").hide();
+              $("#quizMessage").show();
+              $("#correct").hide();
+              $("#wrong").hide();
+              $("#missed").hide();
           console.log(missed);
-          $("#quizMessage").html("You !!Missed !!" + "<br />" + "<br />!!");
+          $("#quizMessage").html("<img class='img' src='https://i.pinimg.com/736x/15/9e/b1/159eb1182d696b48fe9f37a323133255--funny-smiley-weight-loss-challenge.jpg '>"+   "<span>"+"You Missed !!" + "<br />"+"</span>");
           clearInterval(counter);
           setTimeout(nextQues, 1000);
-        }else if(time === 0 && questioncounter ===5){
+        } else if (time === 0 && questioncounter === 5) {
           clearInterval(counter);
+          
         }
-    }
-        function game() {
+      }
+
+      function game() {
         counter = null;
         // console.log(counter);
         $("#question").show();
         $("#answers").show();
         $("#timer").show();
         $("#correct").hide();
-         $("#wrong").hide();
-         $("#missed").hide();
-         $("#play").hide();
-         $("#start_button").hide();
+        $("#wrong").hide();
+        $("#missed").hide();
+        $("#play").hide();
+        $("#start_button").hide();
         time = 30;
         counter = setInterval(timer, 1000);
         var ranQuestion = Math.floor(Math.random() * questions.length); // console.log(ranQuestion);
         var randomKey = questions[ranQuestion]; // console.log(randomKey.question);
         questions.splice(ranQuestion, 1);
-        $("#question").html(randomKey.question); // to generete answers
+         $("#question").html(randomKey.question); // to generete answers
         // console.log(randomKey);
         var correctAnswer = randomKey.correctAnswer; // console.log(correctAnswer);
         var ans = randomKey.answers; // console.log(ans);
@@ -201,8 +295,9 @@
           var choice = ans[i];
           // console.log(choice);
           // console.log(i);
-          $('<li><input type="radio" class="radioBtnClass" value=' + i + ' name="dynradio " />' +"  "+choice + '</li>').appendTo(
-            answers);   
+          $('<li><input type="radio" class="radioBtnClass" value=' + i + ' name="dynradio " />' + "  " + choice +
+            '</li>').appendTo(
+            answers);
         }
 
         $("#answers") // select the radio by its id
@@ -223,9 +318,8 @@
               $("#correct").hide();
               $("#wrong").hide();
               $("#missed").hide();
-              $("#quizMessage").html("yeah!!that's Right!! " + "<br />" + "<br />" + randomKey.fact + "!!");
+              $("#quizMessage").html( "<img class='img' src='http://clipart-library.com/image_gallery/194501.jpg  '>"+"<span>"+"Nailed It!! "+"</span>" + "<br />" + "<br />" +"<span id =fact>"+ randomKey.fact + "</span>"+"!!");
               correct++;
-              
               nextQues();
             } else {
               $("#question").hide();
@@ -234,62 +328,61 @@
               $("#correct").hide();
               $("#wrong").hide();
               $("#missed").hide();
-              $("#quizMessage").html("Oh, I am sorry you are wrong! " + "<br />" + "<br />" + randomKey.fact +
-                "!!");
-             
+              $("#quizMessage").html("<img class='img' src='https://usercontent1.hubstatic.com/8303498_f520.jpg'>"+"<span>"+"WRONG !! "+"</span>" + "<br />" + "<br />" +"<span id =fact>"+ randomKey.fact +"</span>" +"!!");
               wrong++;
               $('#correct').html('correct: ' + correct);
-              $('#wrong').html('wrong: ' +wrong);
+              $('#wrong').html('wrong: ' + wrong);
               // console.log(counter);
               nextQues();
             }
             questioncounter++;
-            // console.log("question count:"+ questioncounter+"!")
-            // console.log("correct:"+correct+"!")
-            // console.log("wrong:"+ wrong+"!")
-            // $('#correct').html('correct: ' + correct);
-            //  $('#wrong').html('wrong: ' +wrong);
-                if(questioncounter===5){
-                    // debugger;
-
-                    displayScore();
-                   
-                   }
-            // console.log(questioncounter);
-          });
+             });
       };
+
       function nextQues() {
+        if(questioncounter < 5){
         $("#answers").off("change")
         setTimeout(function () {
           clear();
           game();
-        }, 3000)
+        },1000)
+      } else{
+        displayScore();
       }
+      }
+     
       function clear() {
         $("#timer").empty();
         $('#question').empty();
         $('#answers').empty();
         $('#quizMessage').empty();
         $('#correct').html('correct: ' + correct);
-        $('#wrong').html('wrong: ' +wrong);
+        $('#wrong').html('wrong: ' + wrong);
       };
-      
+      // function existingQuestions() {
+      //   for (var i = 0; i <selections.length; i++) {
+      //     if (selections[i] === ranQuestion) {
+      //       return true;
+      //     }
+      //   }
+      //   return false;
+      // }
       function displayScore() {
-        console.log(questions);
-          $("#question").hide();
-          $("#answers").hide();
-          $("#quizMessage").hide();
-          $("#timer").hide();
-          $("#correct").show();
-          $("#wrong").show();
-          $("#missed").show();
-          $('#correct').html('correct: ' + correct);
-          $('#wrong').html('wrong: ' + wrong);
-          $("#missed").html('missed:' + missed);
-         $('#start_button').text('Restart').appendTo('body').show();
- } 
+        // console.log(questions);
+        $("#question").hide();
+        $("#answers").hide();
+        $("#quizMessage").hide();
+        $("#timer").hide();
+        $("#correct").show();
+        $("#wrong").show();
+        $("#missed").show();
+        $('#correct').html('correct: ' + correct);
+        $('#wrong').html('wrong: ' + wrong);
+        $("#missed").html('missed:' + missed);
+        $('#start_button').text('Restart').appendTo('body').show();
+      }
 
-       
+
     }); //       end script
   </script>
 </body>
