@@ -1,1 +1,91 @@
-{\rtf1}
+body {
+  background: url("https://hpmedia.bloomsbury.com/rep/g/page-background-shell%20-%202.png");
+}
+
+h1 {
+  font: 60px;
+  color: antiquewhite;
+  font-style: sans-serif;
+  font-weight: bold;
+  text-align: center;
+}
+
+p {
+  font-size: 20px;
+  color: antiquewhite;
+  font-style: sans-serif;
+}
+
+#timer,
+#question,
+#answers,
+#quizMessage,
+#correct,
+#wrong,
+#missed {
+  font-size: 18px;
+  color: antiquewhite;
+  font-style: sans-serif;
+}
+.hidden {
+  display: none; }
+#wrapper {
+  border-top: 2px dashed black;
+  border-bottom: 2px dashed black;
+  padding: 20px;
+  /* margin-bottom: 100px; */
+}
+#testimonials {
+  border-bottom: 2px dashed black;
+  font-size: 20px; }
+ q{
+   size:30px;
+ }
+  #testimonials p {
+    padding: 20px;; }
+    #testimonials li{ 
+      display:none;
+    }
+    #testimonials ul{
+      list-style:none;
+    } 
+
+#start_button {
+  /* margin-left: 220px; */
+  align-self: center;
+  color: brown;
+}
+span{
+  font-size:40px;
+  color: violet;
+  font-weight: bold;
+  text-align: center;
+  margin-left: 50px;
+
+}
+ul {
+  list-style-type: none;
+}
+.img{
+  width: 200px;
+  height: 150px;
+  margin-left:100px;
+  opacity:0.6;
+  border:1px solid black;
+}
+#fact{
+  font-size:25px;
+  color:blanchedalmond;
+  text-align: auto;
+}
+.jumbotron{
+  background-image:url("http://dastornews.com/wp-content/uploads/2015/09/chalkboard-trivia-overlay-620x256.png");
+  margin-bottom: 0px;
+  background-position: 0% 25%;
+background-size: cover;
+background-repeat: no-repeat;
+height:230px;
+width:100%;
+
+  
+}
