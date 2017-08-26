@@ -286,7 +286,7 @@
         $('#correct').html('correct: ' + correct);
         $('#wrong').html('wrong: ' + wrong);
         $("#missed").html('missed:' + missed);
-        $('#start_button').text('Restart').appendTo('body').show();
+        $('#start_button').text('Restart').appendTo('#wrapper').show();
       }
 
 
