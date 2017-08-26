@@ -51,8 +51,8 @@ p {
     } 
 
 #start_button {
-  /* margin-left: 220px; */
-  align-self: center;
+  margin-left: 350px;
+  display: block;
   color: brown;
 }
 span{

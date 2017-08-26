@@ -118,6 +118,7 @@
       $("#start_button").click(function () {
         $(this).hide();
           $("#play").hide();
+         
         clear();
         $('#testimonials').fadeOut(500);
         console.log("test:"+ testimonials);
@@ -127,6 +128,7 @@
         questioncounter = 0;
         selections =[];
         game();
+        timer();
       });
 
       function timer() {
@@ -165,7 +167,7 @@
         $("#missed").hide();
         $("#play").hide();
         $("#start_button").hide();
-        time = 30;
+        time = 31;
         counter = setInterval(timer, 1000);
         var ranQuestion = Math.floor(Math.random() * questions.length); // console.log(ranQuestion);
         var randomKey = questions[ranQuestion]; // console.log(randomKey.question);
